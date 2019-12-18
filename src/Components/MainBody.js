@@ -18,9 +18,14 @@ export default function MainBody(props) {
                 <form className={"numFiller"}>
                   <NumFiller handleInputChange={props.handleInputChange} stateValue={props.stateValue}/>
                 </form>
-                <button className={"incrementButton"}>
-                    "Прибавить"
-                </button>
+                {(0<=props.stateValue)?
+                    <button className={"incrementButton"} onClick={props.increment}>
+                        "Прибавить"
+                    </button> :
+                    <button disabled className={"incrementButton"} onClick={props.increment}>
+                        "Прибавить"
+                    </button>
+                }
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props){
         super (props);
         this.state= {
-            stateValue: "0",
+            stateValue: 0,
         }
     }
 
@@ -18,15 +18,20 @@ class App extends React.Component {
         this.setState({...this.state, stateValue:value});
     }
     decrement(){
-       const stateValue=this.state.stateValue;
-       const value=stateValue-1;
+        const stateValue=this.state.stateValue;
+        const value=stateValue-1;
+        this.setState({...this.state, stateValue:value});
+    }
+    increment(){
+        const stateValue=this.state.stateValue;
+        const value=stateValue+1;
         this.setState({...this.state, stateValue:value});
     }
     render () {
         return (
             <div className="App">
                 <header className="App-header">
-                    <MainBody {...this.state} handleInputChange={(event)=>{this.handleInputChange(event)}} decrement={()=>{this.decrement()}} />
+                    <MainBody {...this.state} handleInputChange={(event)=>{this.handleInputChange(event)}} decrement={()=>{this.decrement()}}  increment={()=>{this.increment()}} />
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
                         Edit <code>src/App.js</code> and save to reload.
