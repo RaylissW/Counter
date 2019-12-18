@@ -35,17 +35,6 @@ class App extends React.Component {
                 <header className="App-header">
                     <MainBody {...this.state} handleInputChange={(event)=>{this.handleInputChange(event)}} decrement={()=>{this.decrement()}}  increment={()=>{this.increment()}} />
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
                 </header>
             </div>
         );
