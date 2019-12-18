@@ -7,9 +7,14 @@ export default function MainBody(props) {
         <div className={"appscreen"}>
             <header> ЧИСЛОСЧЕТЧИК</header>
             <div className={"container"}>
-                <button className={"decrementButton"}  onClick={props.decrement}>
-                   "Вычесть"
-                </button>
+                {(0<props.stateValue)?
+                    <button className={"decrementButton"} onClick={props.decrement}>
+                        "Вычесть"
+                    </button> :
+                    <button disabled className={"decrementButton"} onClick={props.decrement}>
+                        "Вычесть"
+                    </button>
+                }
                 <form className={"numFiller"}>
                   <NumFiller handleInputChange={props.handleInputChange} stateValue={props.stateValue}/>
                 </form>
