@@ -2,11 +2,18 @@ import React from 'react';
 
 export default function NumFiller(props) {
     return (
-        <input type="number"
-               min={0}
-              // pattern="[0-9]*"
-               value ={props.stateValue}
-               onChange={props.handleInputChange}>
-        </input>
+        (props.error) ?
+    <input
+          className={"Err"}
+          type="number"
+           min={0}
+           value={props.stateValue}
+           onChange={props.handleInputChange}>
+    </input>:
+    <input type="number"
+           min={0}
+           value={props.stateValue}
+           onChange={props.handleInputChange}>
+     </input>
     );
 }

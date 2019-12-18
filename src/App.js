@@ -8,6 +8,7 @@ class App extends React.Component {
         super (props);
         this.state= {
             stateValue: 0,
+            error: false,
         }
     }
 
@@ -15,7 +16,8 @@ class App extends React.Component {
         const target = event.target;;
         const value =target.value;
         const stateValue=this.state.stateValue;
-        this.setState({...this.state, stateValue:value});
+        const error=value[0]=="-";
+        this.setState({...this.state, stateValue:value, error});
     }
     decrement(){
         const stateValue=this.state.stateValue;

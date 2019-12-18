@@ -16,7 +16,7 @@ export default function MainBody(props) {
                     </button>
                 }
                 <form className={"numFiller"}>
-                  <NumFiller handleInputChange={props.handleInputChange} stateValue={props.stateValue}/>
+                  <NumFiller handleInputChange={props.handleInputChange} stateValue={props.stateValue} error={props.error}/>
                 </form>
                 {(0<=props.stateValue)?
                     <button className={"incrementButton"} onClick={props.increment}>
